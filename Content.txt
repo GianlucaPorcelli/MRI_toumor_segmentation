@@ -1,0 +1,8 @@
+NOTE: The execution order is required
+
+process: It acquire sequences FLAIR, T1c, T2 in this order using "ReadData3D" function
+process2: It makes a slice of the brain and apply the pseudo colouring process
+process7: It calls function "process3" for generating patches and "process4" for composing saliency maps
+process8: It calls function "process5" for changing the image background colour and "process6" for making patches and create saliency maps
+superpixels: It creates the superpixels segmentation useful to the tumor area detection
+segmentation: It uses the product of the superpixels segmentation to improve the delineation of tumor region
